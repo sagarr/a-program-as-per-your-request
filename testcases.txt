@@ -1,0 +1,84 @@
+~~~~~~~~~~~~ |Test Cases | ~~~~~~~~~~~~
+
+For test cases i had given a sample text file , "README.txt" , also a C source code..
+
+1) how to run :
+-> compile the C source code of search . the file is "wordsrch.c" , compile it,(i use TC, windows XP) . run the program on DOS prompt as follow..
+
+	c:\>wordsrch.exe readme.txt [word_to_find] [case_sen(0/1)] [exact(0/1)]
+		-- > here 0 - means true(yes) AND 1 - means false (no)
+-------------------------------------------------------------------------------------------------------------------------|
+2)Test cases :
+-> 
+
+	i) word to be found out is "see" , case sensitive = NO i.e 0 and exact = NO i.e 0
+
+         	c:\>wordsrch.exe readme.txt see 0 0
+
+		Output ->  Searching for "see" in "README.txt"
+	
+		 Found: "     For a more extensive HTML version of this file, see README.html
+			==>> Line No.: "6"
+
+		 Found: "      See the Release Notes on the Java Software web site for additional
+			l " ==>> Line No.: "34"
+
+		 Found: "     which you can install locally on your machine. See the
+			 No.: "70"
+
+		 Found: "      The term "vendors" used here refers to licensees, developers
+			=>> Line No.: "78"
+
+		 Found: "      be used to override, see " ==>> Line No.: "165"
+-------------------------------------------------------------------------------------------------------------------------|
+
+	ii)word to be found out is "see" , case sensitive = NO i.e 0 and exact = YES i.e 1
+
+	 	c:\>wordsrch.exe readme.txt see 0 1
+
+		Output -> Searching for "see" in "README.txt"
+
+
+ 		Found: "     For a more extensive HTML version of this file, see README.html."
+				==>> Line No.: "6"
+	
+		Found: "      See the Release Notes on the Java Software web site for additiona
+				l " ==>> Line No.: "34"
+
+		 Found: "     which you can install locally on your machine. See the " ==>> Line
+				 No.: "70"
+
+		 Found: "      be used to override, see " ==>> Line No.: "165"
+-------------------------------------------------------------------------------------------------------------------------|
+	iii)word to be found out is "option" , case sensitive = YES i.e 1 and exact = NO i.e 0
+
+	 	c:\>wordsrch.exe readme.txt option 1 0
+
+		Output ->	 Searching for "option" in "README.txt"
+
+				 Found: "      divided into two categories: required and optional. Optional " ==
+						>> Line No.: "86"	
+
+				 Found: "      list of the files and directories that may optionally be " ==>> L
+						ine No.: "89"
+
+				 Found: "      in these lists of optional files must be included in " ==>> Line
+						No.: "91"
+
+				 Found: "      The following files may be optionally excluded from " ==>> Line N
+						o.: "96"
+-------------------------------------------------------------------------------------------------------------------------|
+
+	iv)word to be found out is "Optional" , case sensitive = YES i.e 1 and exact = YES i.e 1
+
+	 	c:\>wordsrch.exe readme.txt see 1 1
+
+		Output -> Searching for "Optional" in "README.txt"
+
+			 Found: "      Required vs. Optional Files" ==>> Line No.: "83"
+
+			 Found: "      divided into two categories: required and optional. 										Optional " ==>> Line No.: "86"
+
+			 Found: "      Optional Files and Directories" ==>> Line No.: "94"
+
+-----------------------------------------------------------------------------------------------------------------------
